@@ -1,0 +1,22 @@
+
+<div class="row">
+
+  <div class="col-xs-12" *ngIf="(isLoading$ | async)"
+    style="height: 100vh; display: flex; justify-content: center; align-items: center"
+  >
+    <loading-spinner ></loading-spinner>
+  </div>
+
+
+  <div class="col-md-5" *ngIf="!(isLoading$ | async)">
+    <app-recipe-list></app-recipe-list>
+  </div>
+
+
+  <div class="col-md-5" *ngIf="!(isLoading$ | async)">
+    <router-outlet></router-outlet>
+  </div>
+
+
+
+</div>
